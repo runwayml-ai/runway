@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore the intersection of AI and emotions in visual art with Soul in Color. Discover how artificial intelligence is revolutionizing creativity and design." name="description"/>
+<meta content="runwayml, runway ai, visual ai, ai creativity, ai in design, ai visual art, emotional graphics" name="keywords"/>
+<title>runway | Soul in Color: AI and Emotions in Visual Art</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Baskerville:wght@400;700&amp;family=Georgia:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+        --primary-pink: #F8D7DA;
+        --primary-green: #D1E7DD;
+        --primary-blue: #CFE2FF;
+        --secondary-grey: #F8F9FA;
+        --accent-gold: #FFD700;
+        --text-color: #333333;
+    }
+    
+    body {
+        font-family: 'Georgia', serif;
+        color: var(--text-color);
+        background-color: #FFFAF0;
+        line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Baskerville', serif;
+        line-height: 1.2;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .btn {
+        border: 1px solid var(--text-color);
+        background-color: transparent;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: var(--text-color);
+        color: #FFFAF0;
+    }
+    
+    .form-control {
+        border: 1px solid var(--text-color);
+        background-color: transparent;
+    }
+    
+    .form-control:focus {
+        box-shadow: none;
+        border-color: var(--accent-gold);
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in effect for elements as they enter the viewport
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+<div class="position-fixed bottom-0 start-50 translate-middle-x p-3 bg-white shadow-lg rounded-top" id="cookie-consent" style="z-index: 1050; display: none;">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-8">
+<p class="mb-0 text-muted">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+</div>
+<div class="col-md-4 text-end">
+<button class="btn btn-sm btn-outline-secondary me-2" id="accept-cookies">Accept</button>
+<button class="btn btn-sm btn-outline-secondary" id="decline-cookies">Decline</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptButton = document.getElementById('accept-cookies');
+    const declineButton = document.getElementById('decline-cookies');
+
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function hideCookieConsent() {
+        cookieConsent.style.display = 'none !important';
+        cookieConsent.remove(); // Completely remove the element from the DOM
+    }
+
+    if (!localStorage.getItem('cookieConsentShown')) {
+        cookieConsent.style.display = 'block';
+    }
+
+    acceptButton.addEventListener('click', function() {
+        setCookie('cookie_consent', 'accepted', 365);
+        localStorage.setItem('cookieConsentShown', 'true');
+        hideCookieConsent();
+    });
+
+    declineButton.addEventListener('click', function() {
+        setCookie('cookie_consent', 'declined', 365);
+        localStorage.setItem('cookieConsentShown', 'true');
+        hideCookieConsent();
+    });
+});
+</script>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<div style="flex: 1;">
+<header>
+<header class="py-3 bg-white">
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light">
+<a class="navbar-brand" href="/" style="font-family: 'Baskerville', serif; font-size: 2rem; color: #4a4a4a; text-decoration: none;">
+                runway
+            </a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="posts.html" style="font-family: 'Georgia', serif; color: #4a4a4a; font-size: 1.1rem; margin: 0 15px;">Posts</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html" style="font-family: 'Georgia', serif; color: #4a4a4a; font-size: 1.1rem; margin: 0 15px;">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contacts.html" style="font-family: 'Georgia', serif; color: #4a4a4a; font-size: 1.1rem; margin: 0 15px;">Contacts</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="privacy_policy.html" style="font-family: 'Georgia', serif; color: #4a4a4a; font-size: 1.1rem; margin: 0 15px;">Privacy Policy</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</header>
+<style>
+    .navbar-nav .nav-link:hover {
+        color: #d4af37 !important;
+        transition: color 0.3s ease;
+    }
+    
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-nav .nav-link {
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function(link) {
+            link.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            link.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        var navbarToggler = document.querySelector('.navbar-toggler');
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navbarToggler.addEventListener('click', function() {
+            navbarCollapse.classList.toggle('show');
+        });
+    });
+</script>
+</header>
+<div style="margin-bottom: 50px;">
+<div class="container mt-5">
+<h1 class="text-center mb-4" style="font-family: 'Baskerville', serif; color: #333; font-size: 3rem;">Exploring AI and Emotions in Visual Art</h1>
+<p class="text-center mb-5" style="font-family: 'Georgia', serif; color: #555; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+    Dive into our collection of thought-stimulatingvoking articles that delve into the intersection of artificial intelligence, creativity, and human emotions in the realm of visual art. Discover how AI is reshaping the landscape of design and artistic expression.
+  </p>
+<div class="row justify-content-center">
+<div class="col-md-8">
+<hr class="my-4" style="border-top: 1px dotted #c9a227;"/>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const heading = document.querySelector('h1');
+    heading.style.opacity = '0';
+    heading.style.transform = 'translateY(20px)';
+    heading.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    
+    setTimeout(() => {
+      heading.style.opacity = '1';
+      heading.style.transform = 'translateY(0)';
+    }, 300);
+  });
+</script>
+</div>
+<div class="container mt-5">
+<div class="row">
+<div class="col-lg-8 offset-lg-2">
+<div class="card-columns">
+<div class="card border-0 mb-4">
+<img alt="Abstract digital artwork showcasing a vibrant spectrum of colors representing various emotions, created by AI" class="card-img-top" src="images/image_0_posts.png"/>
+<div class="card-body">
+<h3 class="card-title" style="font-family: 'Baskerville', serif; color: #333;">The Emotional Palette of AI</h3>
+<p class="card-text" style="font-family: 'Georgia', serif; color: #4a4a4a;">Exploring how AI interprets and expresses human emotions through color in digital art.</p>
+<a class="btn btn-outline-secondary" href="posts_1.html" style="font-family: 'Georgia', serif;">Read More</a>
+</div>
+</div>
+<div class="card border-0 mb-4">
+<img alt="An AI-generated abstract expressionist painting with bold brushstrokes and emotive color combinations" class="card-img-top" src="images/image_1_posts.png"/>
+<div class="card-body">
+<h3 class="card-title" style="font-family: 'Baskerville', serif; color: #333;">Machine Learning and Abstract Expressionism</h3>
+<p class="card-text" style="font-family: 'Georgia', serif; color: #4a4a4a;">Analyzing the intersection of AI algorithms and abstract art techniques in creating emotive visual pieces.</p>
+<a class="btn btn-outline-secondary" href="posts_2.html" style="font-family: 'Georgia', serif;">Read More</a>
+</div>
+</div>
+<div class="card border-0 mb-4">
+<img alt="A digital artwork showing an AI-powered paintbrush creating a surreal landscape on a virtual canvas" class="card-img-top" src="images/image_2_posts.png"/>
+<div class="card-body">
+<h3 class="card-title" style="font-family: 'Baskerville', serif; color: #333;">The Digital Canvas: AI as an Artistic Medium</h3>
+<p class="card-text" style="font-family: 'Georgia', serif; color: #4a4a4a;">Discussing the role of artificial intelligence as a new medium for artistic expression and emotional conveyance.</p>
+<a class="btn btn-outline-secondary" href="posts_3.html" style="font-family: 'Georgia', serif;">Read More</a>
+</div>
+</div>
+<div class="card border-0 mb-4">
+<img alt="A grid of AI-generated portraits showcasing a range of human emotions, from joy to contemplation" class="card-img-top" src="images/image_3_posts.png"/>
+<div class="card-body">
+<h3 class="card-title" style="font-family: 'Baskerville', serif; color: #333;">Emotional Recognition in AI-Generated Portraits</h3>
+<p class="card-text" style="font-family: 'Georgia', serif; color: #4a4a4a;">Examining how AI systems interpret and recreate human emotions in portrait art.</p>
+<a class="btn btn-outline-secondary" href="posts_4.html" style="font-family: 'Georgia', serif;">Read More</a>
+</div>
+</div>
+<div class="card border-0 mb-4">
+<img alt="An immersive AI-powered art installation with people interacting with responsive digital projections" class="card-img-top" src="images/image_4_posts.png"/>
+<div class="card-body">
+<h3 class="card-title" style="font-family: 'Baskerville', serif; color: #333;">The Future of Empathy: AI in Interactive Art Installations</h3>
+<p class="card-text" style="font-family: 'Georgia', serif; color: #4a4a4a;">Exploring the potential of AI-driven interactive art experiences to evoke and respond to viewer emotions.</p>
+<a class="btn btn-outline-secondary" href="posts_5.html" style="font-family: 'Georgia', serif;">Read More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+  body {
+    background-color: #fcfcfa;
+    color: #333;
+  }
+  .card {
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    transition: all 0.3s ease;
+  }
+  .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  @media (max-width: 768px) {
+    .card-columns {
+      column-count: 1;
+    }
+  }
+</style>
+</div>
+<footer style="width: 100%; z-index: 1000;">
+<div class="footer bg-light py-4">
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-3 mb-md-0">
+<h5 class="text-muted mb-3" style="font-family: 'Baskerville', serif;">runway</h5>
+<p class="text-muted small" style="font-family: 'Georgia', serif;">Exploring the intersection of AI and emotions in visual art.</p>
+</div>
+<div class="col-md-4 mb-3 mb-md-0">
+<h5 class="text-muted mb-3" style="font-family: 'Baskerville', serif;">Connect</h5>
+<div class="d-flex">
+<a class="me-3 text-muted" href="#"><i class="fab fa-instagram"></i></a>
+<a class="me-3 text-muted" href="#"><i class="fab fa-twitter"></i></a>
+<a class="me-3 text-muted" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="text-muted" href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="col-md-4">
+<h5 class="text-muted mb-3" style="font-family: 'Baskerville', serif;">Navigate</h5>
+<ul class="list-unstyled">
+<li><a class="text-muted text-decoration-none" href="posts.html" style="font-family: 'Georgia', serif;">Posts</a></li>
+<li><a class="text-muted text-decoration-none" href="about.html" style="font-family: 'Georgia', serif;">About</a></li>
+<li><a class="text-muted text-decoration-none" href="contacts.html" style="font-family: 'Georgia', serif;">Contacts</a></li>
+<li><a class="text-muted text-decoration-none" href="privacy_policy.html" style="font-family: 'Georgia', serif;">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<hr class="my-4" style="border-color: #d3d3d3;"/>
+<div class="row">
+<div class="col-12 text-center">
+<p class="text-muted small" style="font-family: 'Georgia', serif;">© 2024 runway. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</footer>
+</body>
+</html>
